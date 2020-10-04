@@ -1,7 +1,8 @@
-package com.example.fundamentalandroidgithubusers
+package com.example.fundamentalandroidgithubusers.screen.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.fundamentalandroidgithubusers.R
 
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

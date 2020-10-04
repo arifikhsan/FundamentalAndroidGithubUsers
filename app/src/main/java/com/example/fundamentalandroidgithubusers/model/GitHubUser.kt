@@ -1,4 +1,4 @@
-package com.example.fundamentalandroidgithubusers
+package com.example.fundamentalandroidgithubusers.model
 
 data class GitHubUser(
     val username: String,
