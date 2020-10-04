@@ -1,14 +1,15 @@
 {
-  "users": [{
-    "username": "JakeWharton",
-    "name": "Jake Wharton",
-    "avatar": "@drawable/user1",
-    "company": "Google, Inc.",
-    "location": "Pittsburgh, PA, USA",
-    "repository": 102,
-    "follower": 56995,
-    "following": 12
-  },
+  "users": [
+    {
+      "username": "JakeWharton",
+      "name": "Jake Wharton",
+      "avatar": "@drawable/user1",
+      "company": "Google, Inc.",
+      "location": "Pittsburgh, PA, USA",
+      "repository": 102,
+      "follower": 56995,
+      "following": 12
+    },
     {
       "username": "amitshekhariitbhu",
       "name": "AMIT SHEKHAR",
