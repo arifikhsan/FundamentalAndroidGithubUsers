@@ -32,17 +32,17 @@ class GitHubUserAdapter internal constructor(private val context: Context) : Bas
         return itemView
     }
 
-    private inner class ViewHolder internal constructor(view: View) {
+    private inner class ViewHolder(view: View) {
         private val textName: TextView = view.findViewById(R.id.text_name)
         private val textUsername: TextView = view.findViewById(R.id.text_username)
         private val imageAvatar: ImageView = view.findViewById(R.id.image_avatar)
 
-        internal fun bind(user: GitHubUser) {
+        fun bind(user: GitHubUser) {
             textName.text = user.name
             textUsername.text = user.username
             imageAvatar.setImageResource(
                 context.resources.getIdentifier(
-                    "user1",
+                    user.avatar,
                     "drawable",
                     context.packageName
                 )
