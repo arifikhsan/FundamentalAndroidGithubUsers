@@ -1,5 +1,6 @@
 package com.example.fundamentalandroidgithubusers.screen.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundamentalandroidgithubusers.R
 import com.example.fundamentalandroidgithubusers.UserRepository
+import com.example.fundamentalandroidgithubusers.screen.detail.DetailActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +31,11 @@ class MainActivity : AppCompatActivity() {
         adapter.users = users
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-            Toast.makeText(this@MainActivity, users[position].name, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@MainActivity, users[position].name, Toast.LENGTH_SHORT).show()
+
+            val moveObject = Intent(this, DetailActivity::class.java)
+            moveObject.putExtra(DetailActivity.EXTRA_USER, users[position])
+            startActivity(moveObject)
         }
     }
 
