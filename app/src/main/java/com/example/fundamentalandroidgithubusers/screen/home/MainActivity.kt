@@ -2,15 +2,17 @@ package com.example.fundamentalandroidgithubusers.screen.home
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundamentalandroidgithubusers.R
 import com.example.fundamentalandroidgithubusers.UserRepository
 
 class MainActivity : AppCompatActivity() {
 
-    private val names = arrayOf("aa", "bb", "cc")
     private val repository: UserRepository = UserRepository()
+    private val users = repository.getUsers()
     private lateinit var adapter: GitHubUserAdapter
 
     companion object {
@@ -24,7 +26,11 @@ class MainActivity : AppCompatActivity() {
         val listView = findViewById<ListView>(R.id.list_users)
         adapter = GitHubUserAdapter(this)
         listView.adapter = adapter
-        adapter.users = repository.getUsers()
+        adapter.users = users
+
+        listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+            Toast.makeText(this@MainActivity, users[position].name, Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
